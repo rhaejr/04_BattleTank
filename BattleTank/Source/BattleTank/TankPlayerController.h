@@ -21,4 +21,8 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	virtual void BeginPlay() override;
+	
+	void AimTowardsCrosshair();
 };
+
+
