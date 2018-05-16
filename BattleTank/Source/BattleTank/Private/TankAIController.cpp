@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "TankAIController.h"
 #include "Engine/World.h"
@@ -20,6 +20,7 @@ void ATankAIController::Tick(float DeltaTime)
 	if (PlayerTank)
 	{
 		// TODO Move towards player
+		MoveToActor(PlayerTank, AcceptanceRadius); // check to make sure acceptance radius is cm 
 
 		// Aim towards player
 		

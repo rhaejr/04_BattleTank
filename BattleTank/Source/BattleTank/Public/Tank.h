@@ -11,6 +11,7 @@ class UTankBarrel;
 class UTankAimingComponent;
 class UTankTurret;
 class AProjectile;
+class UTankMovementComponent;
 
 UCLASS()
 class BATTLETANK_API ATank : public APawn
@@ -28,7 +29,10 @@ public:
 	void Fire();
 
 protected:
-	UTankAimingComponent * TankAimingComponent = nullptr;
+	UTankAimingComponent* TankAimingComponent = nullptr;
+
+	UPROPERTY(BlueprintReadOnly)
+	UTankMovementComponent* TankMovementComponent = nullptr;
 
 private:
 	// Sets default values for this pawn's properties
@@ -49,9 +53,6 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, CAtegory = Firing)
 	float ReloadTimeInSeconds = 3;
-	
-	
-	
 
 	UTankBarrel* Barrel = nullptr;
 	
