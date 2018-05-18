@@ -20,11 +20,7 @@ class BATTLETANK_API ATank : public APawn
 
 public:
 	void AimAt(FVector HitLocation);
-
-	UFUNCTION(BlueprintCallable)
-	void SetBarrelReferance(UTankBarrel* BarrelToSet);
-	UFUNCTION(BlueprintCallable)
-	void SetTurretReferance(UTankTurret * TurretToSet);
+	
 	UFUNCTION(BlueprintCallable)
 	void Fire();
 
@@ -43,7 +39,6 @@ private:
 	virtual void BeginPlay() override;
 
 	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	TSubclassOf<AProjectile> ProjectileBlueprint;

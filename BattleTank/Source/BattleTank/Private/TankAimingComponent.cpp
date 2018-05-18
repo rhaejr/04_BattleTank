@@ -19,6 +19,14 @@ UTankAimingComponent::UTankAimingComponent()
 }
 
 
+void UTankAimingComponent::Initialize(UTankTurret * TurretToSet, UTankBarrel * BarrelToSet)
+{
+	if (!TurretToSet || !BarrelToSet) { return; }
+
+	Barrel = BarrelToSet;
+	Turret = TurretToSet;
+}
+
 void UTankAimingComponent::SetBarrelReferance(UTankBarrel* BarrelToSet)
 {
 	if (!BarrelToSet) { return; }
