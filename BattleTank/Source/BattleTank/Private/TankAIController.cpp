@@ -30,23 +30,3 @@ void ATankAIController::Tick(float DeltaTime)
 		ControlledTank->Fire();
 	}
 }
-
-//ATank* ATankAIController::GetControlledTank() const
-//{
-//	return ;
-//
-//}
-//
-//ATank* ATankAIController::GetPlayerTank() const
-//{
-//	auto PlayerTank = GetWorld()->GetFirstPlayerController()->GetPawn();
-//	if (!PlayerTank)
-//	{
-//		return nullptr;
-//	}
-//	else
-//	{
-//		return Cast<ATank>(PlayerTank);
-//	}
-//}
-
