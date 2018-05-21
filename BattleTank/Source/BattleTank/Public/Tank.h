@@ -40,14 +40,14 @@ private:
 
 	// Called to bind functionality to input
 
-	UPROPERTY(EditDefaultsOnly, Category = Setup)
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 
 
-	UPROPERTY(EditDefaultsOnly, CAtegory = Firing)
+	UPROPERTY(EditDefaultsOnly, CAtegory = "Firing")
 	float LaunchSpeed = 6000.0; // TODO find sensible default
 
-	UPROPERTY(EditDefaultsOnly, CAtegory = Firing)
+	UPROPERTY(EditDefaultsOnly, CAtegory = "Firing")
 	float ReloadTimeInSeconds = 3;
 
 	UTankBarrel* Barrel = nullptr;
