@@ -2,7 +2,7 @@
 
 #include "TankAIController.h"
 #include "Engine/World.h"
-#include "Tank.h"
+
 #include "TankAimingComponent.h"
 
 
@@ -19,7 +19,6 @@ void ATankAIController::Tick(float DeltaTime)
 
 	if (ensure(PlayerTank))
 	{
-		// TODO Move towards player
 		MoveToActor(PlayerTank, AcceptanceRadius); // check to make sure acceptance radius is cm 
 
 		// Aim towards player
@@ -27,7 +26,6 @@ void ATankAIController::Tick(float DeltaTime)
 		if (!ensure(AimingComponent)) { return; }
 		AimingComponent->AimAt(PlayerTank->GetActorLocation());
 
-		// TODO Fix firing
-		//ControlledTank->Fire();  
+		AimingComponent->Fire();  
 	}
 }

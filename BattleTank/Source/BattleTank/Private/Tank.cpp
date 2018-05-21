@@ -2,10 +2,7 @@
 
 
 #include "Tank.h"
-#include "TankMovementComponent.h"
 #include "Engine/World.h"
-#include "TankBarrel.h"
-#include "Projectile.h"
 
 
 
@@ -16,12 +13,6 @@ ATank::ATank()
 	PrimaryActorTick.bCanEverTick = false;
 
 
-}
-
-// Called when the game starts or when spawned
-void ATank::BeginPlay()
-{
-	Super::BeginPlay();
 }
 
 
