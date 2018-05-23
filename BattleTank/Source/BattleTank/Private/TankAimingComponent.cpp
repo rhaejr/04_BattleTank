@@ -103,9 +103,9 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 
 bool UTankAimingComponent::IsBarrelMoving()
 {
+	if (!ensure(Barrel)) { return false; }
 
-
-	return false;
+	return !Barrel->GetForwardVector().Equals(AimDirection, 0.01);
 }
 
 void UTankAimingComponent::Fire()
@@ -124,6 +124,7 @@ void UTankAimingComponent::Fire()
 		Projectile->LaunchProjectile(LaunchSpeed);
 
 		LastFireTime = GetWorld()->GetTimeSeconds();
+		FiringState = EFiringStatus::Reloading;
 	}
 
 
