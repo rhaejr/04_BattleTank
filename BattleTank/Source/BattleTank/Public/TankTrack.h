@@ -19,6 +19,8 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Input")
 	void SetThrottle(float Throttle);
+
+	void DriveTrack();
 	
 	// Max force per track in newtons
 	UPROPERTY(EditDefaultsOnly)
@@ -28,6 +30,9 @@ public:
 private:
 	UTankTrack();
 	void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction * ThisTickFunction);
+	void ApplySidewaysForce();
 	UFUNCTION()
 	void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+
+	float CurrentThrottle = 0;
 };
